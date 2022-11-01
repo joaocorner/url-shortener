@@ -13,38 +13,63 @@ $border-radius: 5px;
 }
 
 body {
-  background-color: $Holiday-Cheer-1-hex;
+  background-color: $Holiday-Cheer-2-hex;
   color: $Holiday-Cheer-5-hex;
   line-height: 1.6;
   font-family: $font-stack;
 }
 
-.container-input {
-  height: 200px;
+.container {
+  margin: 30vh auto;
+  padding: 30px 0;
+  background: $Holiday-Cheer-1-hex;
+  height: 300px;
   border: 1px solid black;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  border: 1px solid black;
 
-  input {
-    background-color: $Holiday-Cheer-5-hex;
-    color: $Holiday-Cheer-1-hex;
-    width: 300px;
-    height: 50px;
-    padding: 10px;
-    border-radius: $border-radius;
-    font-size: larger;
+  .container-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      background-color: $Holiday-Cheer-5-hex;
+      color: $Holiday-Cheer-1-hex;
+      width: 300px;
+      height: 50px;
+      padding: 10px;
+      border-radius: $border-radius;
+      font-size: larger;
+    }
+
+    button {
+      background-color: $Holiday-Cheer-2-hex;
+      color: $Holiday-Cheer-5-hex;
+      border: 1px solid black;
+      border-radius: $border-radius;
+      height: 50px;
+      padding: 10px;
+      margin: 10px;
+      cursor: pointer;
+      font-size: larger;
+    }
   }
+}
 
-  button {
-    background-color: $Holiday-Cheer-2-hex;
-    color: $Holiday-Cheer-5-hex;
-    border: 1px solid black;
-    border-radius: $border-radius;
-    height: 50px;
-    padding: 10px;
-    margin: 10px;
-    cursor: pointer;
-    font-size: larger;
+@media screen and (max-width: 768px) {
+  .container-input {
+    flex-direction: column;
+
+    input {
+      margin-bottom: 10px;
+    }
+    button {
+      padding-top: 10px;
+      margin-top: 15px;
+    }
   }
 }

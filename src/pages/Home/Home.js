@@ -2,14 +2,22 @@ import "./home.scss";
 import Nav from "../../components/Nav";
 import Modal from "../../components/Modal";
 import { useState } from "react";
+import api from "../services/api";
 
 const Home = () => {
   const [savedLink, setSavedLink] = useState("");
   const [showModal, setShowModal] = useState(false);
 
-  const shortenLink = (e) => {
-    e.preventDefault();
-    setShowModal(true);
+  const shortenLink = async (e) => {
+    try {
+      const response = await api.post("/shorten", {
+        long_url: savedLink,
+      });
+
+      console.log(response);
+    } catch {
+      alert("Erro ao gerar o link");
+    }
   };
 
   return (

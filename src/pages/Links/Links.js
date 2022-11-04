@@ -15,13 +15,14 @@ const Links = () => {
   const [myLinks, setMyLinks] = useState([]);
   const [data, setData] = useState({});
   const [showModal, setShowModal] = useState(false);
+  const [emptyList, setEmptyList] = useState(false);
 
   useEffect(() => {
     async function getLinks() {
       const result = await getLinksSave("@shortLinks");
 
       if (result.length === 0) {
-        console.log("No links stored");
+        setEmptyList(true);
       }
 
       setMyLinks(result);
@@ -39,8 +40,7 @@ const Links = () => {
     const result = await deleteLink(myLinks, id);
 
     if (result.length === 0) {
-      //if there are no links saved, return
-      console.log("No links stored");
+      setEmptyList(true);
     }
 
     setMyLinks(result);
@@ -54,6 +54,13 @@ const Links = () => {
         </Link>
         <h2>Links armazenados</h2>
       </header>
+      {emptyList && (
+        <div className="links-item">
+          <h2 className="empty-text">
+            Crie algum link para ele aparecer aqui...
+          </h2>
+        </div>
+      )}
       {myLinks.map((link) => (
         <div key={link.id} className="container-external">
           <div className="container-internal">

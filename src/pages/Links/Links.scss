@@ -20,6 +20,12 @@ $border-radius: 5px;
   display: flex;
   flex-direction: column;
 
+  .empty-text {
+    width: 100%;
+    text-align: center;
+    margin-top: 28px;
+  }
+
   header {
     display: flex;
     align-items: center;

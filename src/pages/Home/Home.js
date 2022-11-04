@@ -1,7 +1,10 @@
 import "./home.scss";
 import Nav from "../../components/Nav";
+import { useState } from "react";
 
 const Home = () => {
+  const [savedLink, setSavedLink] = useState("");
+
   return (
     <div>
       <Nav />
@@ -9,7 +12,12 @@ const Home = () => {
         <h1>URL Shortener</h1>
         <form action="">
           <div className="container-input">
-            <input type="text" />
+            <input
+              type="text"
+              placeholder="Cole seu link aqui"
+              value={savedLink}
+              onChange={(e) => setSavedLink(e.target.value)}
+            />
             <button type="submit">Encurtar URL</button>
           </div>
         </form>

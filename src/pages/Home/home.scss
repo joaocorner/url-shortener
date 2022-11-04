@@ -55,6 +55,16 @@ body {
       font-size: larger;
     }
   }
+  .container-output {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 50px;
+  }
+  .hidden {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {

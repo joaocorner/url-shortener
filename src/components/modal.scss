@@ -1,0 +1,86 @@
+$Holiday-Cheer-1-hex: #024554;
+$Holiday-Cheer-2-hex: #53736a;
+$Holiday-Cheer-3-hex: #6a8c69;
+$Holiday-Cheer-4-hex: #a8b545;
+$Holiday-Cheer-5-hex: #c2c0a6;
+$border-radius: 5px;
+
+.card {
+  background: $Holiday-Cheer-2-hex;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 10px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  top: 30vh;
+  left: 10%;
+  width: 80%;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.header {
+  background: $Holiday-Cheer-1-hex;
+  padding: 1rem;
+  h2 {
+    margin: 0;
+    color: $Holiday-Cheer-5-hex;
+  }
+}
+
+.content-external {
+  padding: 1rem 2rem;
+  p {
+    padding: 0.3rem;
+  }
+
+  .content-internal {
+    display: flex;
+    justify-content: space-between;
+    background-color: $Holiday-Cheer-4-hex;
+    color: $Holiday-Cheer-1-hex;
+    padding: 0.3rem;
+    border-radius: $border-radius;
+    align-items: center;
+    font-weight: 600;
+    .icon {
+      color: $Holiday-Cheer-1-hex;
+    }
+  }
+}
+
+.actions {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  button {
+    padding: 10px;
+    border-radius: $border-radius;
+    background: $Holiday-Cheer-1-hex;
+    color: $Holiday-Cheer-5-hex;
+    font-weight: 600;
+  }
+  button:hover {
+    background: $Holiday-Cheer-3-hex;
+    color: $Holiday-Cheer-5-hex;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal {
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}

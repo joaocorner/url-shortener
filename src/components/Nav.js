@@ -4,7 +4,8 @@ import "./nav.scss";
 const Nav = () => {
   return (
     <div className="navbar">
-      <a href="/">Links salvos</a>
+      <h1>URL Shortener</h1>
+      <a href="/Links">Links salvos</a>
     </div>
   );
 };

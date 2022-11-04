@@ -1,4 +1,5 @@
 import "./Links.scss";
+import { Link } from "react-router-dom";
 
 import { BsFillTrashFill } from "react-icons/bs";
 import { RiArrowGoBackFill } from "react-icons/ri";
@@ -8,7 +9,9 @@ const Links = () => {
   return (
     <body className="container-links">
       <header>
-        <RiArrowGoBackFill className="icon" size={30} />
+        <Link to="/home">
+          <RiArrowGoBackFill className="icon" size={30} />
+        </Link>
         <h1>Links armazenados</h1>
       </header>
       <div className="container-external">

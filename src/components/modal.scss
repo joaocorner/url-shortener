@@ -43,6 +43,11 @@ $border-radius: 5px;
   padding: 1rem 2rem;
   p {
     padding: 0.3rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+    text-align: left;
   }
 
   .content-internal {

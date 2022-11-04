@@ -1,3 +1,7 @@
+import { useState, useEffect } from "react";
+
+import { getLinksSave } from "../services/storeLinks";
+
 import "./Links.scss";
 import { Link } from "react-router-dom";
 
@@ -6,6 +10,22 @@ import { RiArrowGoBackFill } from "react-icons/ri";
 import { MdContentPaste } from "react-icons/md";
 
 const Links = () => {
+  const [myLinks, setMyLinks] = useState([]);
+
+  useEffect(() => {
+    async function getLinks() {
+      const result = await getLinksSave("@shortLinks");
+
+      if (result.length === 0) {
+        console.log("No links stored");
+      }
+
+      setMyLinks(result);
+    }
+
+    getLinks();
+  }, []);
+
   return (
     <body className="container-links">
       <header>
@@ -14,20 +34,15 @@ const Links = () => {
         </Link>
         <h2>Links armazenados</h2>
       </header>
-      <div className="container-external">
-        <div className="container-internal">
-          <MdContentPaste className="icon" size={30} />
-          <p>https://www.youtube.com/</p>
+      {myLinks.map((link) => (
+        <div key={link.id} className="container-external">
+          <div className="container-internal">
+            <MdContentPaste className="icon" size={60} />
+            <p>{link.long_url}</p>
+          </div>
+          <BsFillTrashFill size={30} className="icon" />
         </div>
-        <BsFillTrashFill size={30} className="icon" />
-      </div>
-      <div className="container-external">
-        <div className="container-internal">
-          <MdContentPaste className="icon" size={30} />
-          <p>https://www.facebook.com/</p>
-        </div>
-        <BsFillTrashFill size={30} className="icon" />
-      </div>
+      ))}
     </body>
   );
 };

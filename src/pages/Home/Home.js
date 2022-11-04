@@ -1,13 +1,15 @@
 import "./home.scss";
 import Nav from "../../components/Nav";
+import Modal from "../../components/Modal";
 import { useState } from "react";
 
 const Home = () => {
   const [savedLink, setSavedLink] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const shortenLink = (e) => {
     e.preventDefault();
-    console.log(savedLink);
+    setShowModal(true);
   };
 
   return (
@@ -28,10 +30,7 @@ const Home = () => {
             </button>
           </div>
         </form>
-        <div className="container-output">
-          <p className="long-link">https://www.youtube.com/</p>
-          <p className="shortener-link">https://www.yt.com/</p>
-        </div>
+        {showModal && <Modal closeModal={() => setShowModal(false)} />}
       </div>
     </div>
   );

@@ -15,7 +15,10 @@ $border-radius: 5px;
 }
 
 .container-links {
-  margin: 30px 40px;
+  margin: 30px auto;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
 
   header {
     display: flex;
@@ -25,8 +28,9 @@ $border-radius: 5px;
     border-radius: $border-radius;
     height: 70px;
 
-    h1 {
-      margin: 0 10px;
+    h2 {
+      margin: 0 20px;
+      font-size: 1.9rem;
     }
   }
 
@@ -37,6 +41,8 @@ $border-radius: 5px;
     background-color: $Holiday-Cheer-1-hex;
     align-items: center;
     height: 70px;
+    justify-content: space-between;
+    padding-right: 30px;
 
     .container-internal {
       width: 80vw;
@@ -47,7 +53,32 @@ $border-radius: 5px;
 
       p {
         margin: 0 20px;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: block;
+        overflow: hidden;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media (max-width: 715px) {
+  .container-links {
+    width: 100vw;
+
+    header {
+      h2 {
+        margin-left: 20px;
+        font-size: 1.6rem;
+      }
+    }
+    .container-external {
+      .container-internal {
+        p {
+          font-size: 1rem;
+        }
       }
     }
   }

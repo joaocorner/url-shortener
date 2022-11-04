@@ -12,7 +12,7 @@ const Links = () => {
         <Link to="/home">
           <RiArrowGoBackFill className="icon" size={30} />
         </Link>
-        <h1>Links armazenados</h1>
+        <h2>Links armazenados</h2>
       </header>
       <div className="container-external">
         <div className="container-internal">

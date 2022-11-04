@@ -47,7 +47,7 @@ const Links = () => {
   }
 
   return (
-    <body className="container-links">
+    <div className="container-links">
       <header>
         <Link to="/home">
           <RiArrowGoBackFill className="icon" size={30} />
@@ -81,7 +81,7 @@ const Links = () => {
       {showModal && (
         <Modal closeModal={() => setShowModal(false)} content={data} />
       )}
-    </body>
+    </div>
   );
 };
 

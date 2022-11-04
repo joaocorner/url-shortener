@@ -3,6 +3,7 @@ import Nav from "../../components/Nav";
 import Modal from "../../components/Modal";
 import { useState } from "react";
 import api from "../services/api";
+import { saveLink } from "../services/storeLinks.js";
 
 const Home = () => {
   const [link, setLink] = useState("");
@@ -19,6 +20,7 @@ const Home = () => {
 
       setData(response.data);
       setShowModal(true);
+      saveLink("@shortLinks", response.data);
       setLink("");
     } catch {
       alert("Erro ao gerar o link");

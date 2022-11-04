@@ -5,18 +5,24 @@ import { useState } from "react";
 import api from "../services/api";
 
 const Home = () => {
-  const [savedLink, setSavedLink] = useState("");
+  const [link, setLink] = useState("");
+  const [data, setData] = useState({});
   const [showModal, setShowModal] = useState(false);
 
   const shortenLink = async (e) => {
+    e.preventDefault();
+
     try {
       const response = await api.post("/shorten", {
-        long_url: savedLink,
+        long_url: link,
       });
 
-      console.log(response);
+      setData(response.data);
+      setShowModal(true);
+      setLink("");
     } catch {
       alert("Erro ao gerar o link");
+      setLink("");
     }
   };
 
@@ -25,20 +31,21 @@ const Home = () => {
       <Nav />
       <div className="container">
         <h1>URL Shortener</h1>
+        <p>Insira abaixo o seu link para ser encurtado</p>
         <form action="">
           <div className="container-input">
             <input
               type="text"
               placeholder="Cole seu link aqui"
-              value={savedLink}
-              onChange={(e) => setSavedLink(e.target.value)}
+              value={link}
+              onChange={(e) => setLink(e.target.value)}
             />
-            <button type="submit" onClick={shortenLink}>
-              Encurtar URL
-            </button>
+            <button onClick={shortenLink}>Encurtar</button>
           </div>
         </form>
-        {showModal && <Modal closeModal={() => setShowModal(false)} />}
+        {showModal && (
+          <Modal closeModal={() => setShowModal(false)} content={data} />
+        )}
       </div>
     </div>
   );

@@ -2,6 +2,10 @@ import "./modal.scss";
 import { FiClipboard } from "react-icons/fi";
 
 const Modal = (props) => {
+  const copyLink = async () => {
+    await navigator.clipboard.writeText(props.content.link);
+  };
+
   return (
     <div>
       <div className="backdrop" onClick={props.closeModal}></div>
@@ -10,10 +14,10 @@ const Modal = (props) => {
           <h2>URL encurtada</h2>
         </header>
         <div className="content-external">
-          <p>https://www.youtube.com</p>
+          <p>{props.content.long_url}</p>
           <div className="content-internal">
-            <span>http://www.bit.ly/zazazaza</span>
-            <FiClipboard size={20} className="icon" />
+            <span>{props.content.link}</span>
+            <FiClipboard size={20} className="icon" onClick={copyLink} />
           </div>
         </div>
         <footer className="actions">

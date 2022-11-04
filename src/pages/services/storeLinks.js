@@ -19,3 +19,14 @@ export async function saveLink(key, newLink) {
   await localStorage.setItem(key, JSON.stringify(linksStored));
   console.log("Link stored");
 }
+
+export function deleteLink(links, id) {
+  let myLinks = links.filter((item) => {
+    return item.id !== id;
+  });
+
+  localStorage.setItem("@shortLinks", JSON.stringify(myLinks));
+  console.log("Link deleted");
+
+  return myLinks;
+}

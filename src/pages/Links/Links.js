@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { getLinksSave } from "../services/storeLinks";
+import { getLinksSave, deleteLink } from "../services/storeLinks";
 
 import "./Links.scss";
 import Modal from "../../components/Modal";
@@ -35,6 +35,17 @@ const Links = () => {
     setShowModal(true);
   }
 
+  async function handleDelete(id) {
+    const result = await deleteLink(myLinks, id);
+
+    if (result.length === 0) {
+      //if there are no links saved, return
+      console.log("No links stored");
+    }
+
+    setMyLinks(result);
+  }
+
   return (
     <body className="container-links">
       <header>
@@ -53,7 +64,11 @@ const Links = () => {
             />
             <p>{link.long_url}</p>
           </div>
-          <BsFillTrashFill size={30} className="icon" />
+          <BsFillTrashFill
+            size={30}
+            onClick={() => handleDelete(link.id)}
+            className="icon"
+          />
         </div>
       ))}
       {showModal && (

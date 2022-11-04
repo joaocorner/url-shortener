@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { getLinksSave } from "../services/storeLinks";
 
 import "./Links.scss";
+import Modal from "../../components/Modal";
+
 import { Link } from "react-router-dom";
 
 import { BsFillTrashFill } from "react-icons/bs";
@@ -11,6 +13,8 @@ import { MdContentPaste } from "react-icons/md";
 
 const Links = () => {
   const [myLinks, setMyLinks] = useState([]);
+  const [data, setData] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     async function getLinks() {
@@ -26,6 +30,11 @@ const Links = () => {
     getLinks();
   }, []);
 
+  function handleOpenLink(link) {
+    setData(link);
+    setShowModal(true);
+  }
+
   return (
     <body className="container-links">
       <header>
@@ -37,12 +46,19 @@ const Links = () => {
       {myLinks.map((link) => (
         <div key={link.id} className="container-external">
           <div className="container-internal">
-            <MdContentPaste className="icon" size={60} />
+            <MdContentPaste
+              className="icon"
+              size={60}
+              onClick={() => handleOpenLink(link)}
+            />
             <p>{link.long_url}</p>
           </div>
           <BsFillTrashFill size={30} className="icon" />
         </div>
       ))}
+      {showModal && (
+        <Modal closeModal={() => setShowModal(false)} content={data} />
+      )}
     </body>
   );
 };

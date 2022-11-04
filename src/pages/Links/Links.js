@@ -1,4 +1,4 @@
-// import "./Links.scss";
+import "./Links.scss";
 
 import { BsFillTrashFill } from "react-icons/bs";
 import { RiArrowGoBackFill } from "react-icons/ri";
@@ -15,6 +15,13 @@ const Links = () => {
         <div className="container-internal">
           <MdContentPaste className="icon" size={30} />
           <p>https://www.youtube.com/</p>
+        </div>
+        <BsFillTrashFill size={30} className="icon" />
+      </div>
+      <div className="container-external">
+        <div className="container-internal">
+          <MdContentPaste className="icon" size={30} />
+          <p>https://www.facebook.com/</p>
         </div>
         <BsFillTrashFill size={30} className="icon" />
       </div>

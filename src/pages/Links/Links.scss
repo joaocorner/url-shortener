@@ -1,0 +1,50 @@
+$Holiday-Cheer-1-hex: #024554;
+$Holiday-Cheer-2-hex: #53736a;
+$Holiday-Cheer-3-hex: #6a8c69;
+$Holiday-Cheer-4-hex: #a8b545;
+$Holiday-Cheer-5-hex: #c2c0a6;
+$font-stack: Arial, Helvetica, sans-serif;
+$border-radius: 5px;
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.container-links {
+  margin: 30px 40px;
+
+  header {
+    display: flex;
+    align-items: center;
+    background-color: $Holiday-Cheer-1-hex;
+    padding: 5px 20px;
+    border-radius: $border-radius;
+    height: 70px;
+
+    h1 {
+      margin: 0 10px;
+    }
+  }
+
+  .container-external {
+    display: flex;
+    border-radius: $border-radius;
+    margin: 10px 0;
+    background-color: $Holiday-Cheer-1-hex;
+    align-items: center;
+    height: 70px;
+
+    .container-internal {
+      width: 80vw;
+      display: flex;
+      padding: 10px 20px;
+      margin: 15px 0;
+      align-items: center;
+
+      p {
+        margin: 0 20px;
+        font-size: 1.7rem;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { getLinksSave, deleteLink } from "../services/storeLinks";
+import { getLinksSave, deleteLink } from "../../services/storeLinks";
 
 import "./Links.scss";
 import Modal from "../../components/Modal";

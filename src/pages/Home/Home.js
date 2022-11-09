@@ -2,8 +2,8 @@ import "./home.scss";
 import Nav from "../../components/Nav";
 import Modal from "../../components/Modal";
 import { useState } from "react";
-import api from "../services/api";
-import { saveLink } from "../services/storeLinks.js";
+import api from "../../services/api";
+import { saveLink } from "../../services/storeLinks.js";
 
 const Home = () => {
   const [link, setLink] = useState("");

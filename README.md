@@ -6,7 +6,7 @@ Enjoy!!
 
 Project developed to improve concepts in React.
 
-[Demo](joaocorner.github.io/url-shortener/)
+[Demo](https://joaocorner.github.io/url-shortener)
 
 ![Preview](https://raw.githubusercontent.com/joaocorner/url-shortener/main/public/img/preview.png)
 

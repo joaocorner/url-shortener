@@ -66,7 +66,7 @@ const Links = () => {
           <div className="container-internal">
             <MdContentPaste
               className="icon"
-              size={60}
+              size={30}
               onClick={() => handleOpenLink(link)}
             />
             <p>{link.long_url}</p>

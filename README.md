@@ -8,7 +8,7 @@ Project developed to improve concepts in React.
 
 [Demo](https://joaocorner.github.io/url-shortener)
 
-![Preview](https://raw.githubusercontent.com/joaocorner/url-shortener/main/public/img/preview.png)
+![Preview](https://raw.githubusercontent.com/joaocorner/url-shortener/main/public/img/preview.gif)
 
 ## Sumary
 

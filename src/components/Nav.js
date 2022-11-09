@@ -5,7 +5,7 @@ const Nav = () => {
   return (
     <div className="navbar">
       <h1>URL Shortener</h1>
-      <a href="/Links">Links salvos</a>
+      <a href="/url-shortener/Links">Links salvos</a>
     </div>
   );
 };

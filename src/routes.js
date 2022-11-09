@@ -8,8 +8,7 @@ function RoutesApp() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="*" element={<Home />} />
-        <Route path="/Links" element={<Links />} />
+        <Route path="/url-shortener/Links" element={<Links />} />
       </Routes>
     </BrowserRouter>
   );

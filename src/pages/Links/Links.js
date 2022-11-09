@@ -49,7 +49,7 @@ const Links = () => {
   return (
     <div className="container-links">
       <header>
-        <Link to="/home">
+        <Link to="/">
           <RiArrowGoBackFill className="icon" size={30} />
         </Link>
         <h2>Links armazenados</h2>
